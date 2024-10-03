@@ -6,8 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon index.js", 
-    "client": "cd client/weather-frontend && npm run dev"
+    "server": "nodemon index.js",
+    "client": "cd client/weather-frontend && npm run dev",
+    "start": "node index.js"
   },
   "keywords": [],
   "author": "",
