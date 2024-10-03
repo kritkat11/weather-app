@@ -7,11 +7,22 @@ const app = express();
 
 app.use(express.json());
 
+// Allow specific origins, including localhost for development
+const allowedOrigins = ['http://localhost:5173', 'https://weather-app-two-mu-25.vercel.app', 'https://weather-app-k7rh.vercel.app'];
+
 app.use(cors({
-    origin: 'https://weather-app-k7rh.vercel.app', // Replace this with your frontend URL
-    methods: ['GET', 'POST'],
-    credentials: true // Add if you need to send cookies
+  origin: function (origin, callback) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.indexOf(origin) === -1) {
+      // If origin isn't in the allowedOrigins list
+      const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+      return callback(new Error(msg), false);
+    }
+    return callback(null, true);
+  }
 }));
+
 
 // API Key & Base URL for OpenWeatherMap
 const apiKey = process.env.OPENWEATHER_API_KEY;
