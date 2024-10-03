@@ -21,6 +21,7 @@ function Login({ setLoggedIn }) {
                 navigate('/weather'); // Redirect to the weather page after successful login
             }
         } catch (err) {
+            console.error(err);
             setError(err.response ? err.response.data.message : 'Login failed');
         }
     };
