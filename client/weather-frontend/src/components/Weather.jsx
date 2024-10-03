@@ -24,7 +24,7 @@ function Weather() {
     const getWeatherByLocation = async (lat, lon) => {
         try {
             // Adjust this URL according to the API you're using
-            const response = await axios.get(`https://weather-app-two-mu-25.vercel.app/api/weather?lat=${lat}&lon=${lon}`);
+            const response = await axios.get(`https://weather-app-yyju.onrender.com/api/weather?lat=${lat}&lon=${lon}`);
             setWeatherData(response.data.current);
             setForecastData(filterDailyForecast(response.data.forecast.list));
         } catch (error) {
@@ -40,7 +40,7 @@ function Weather() {
         }
     
         try {
-            const response = await axios.get(`https://weather-app-two-mu-25.vercel.app/api/weather?city=${city}`);
+            const response = await axios.get(`https://weather-app-yyju.onrender.com/api/weather?city=${city}`);
             if (response.data && response.data.current && response.data.forecast) {
                 setWeatherData(response.data.current);
                 setForecastData(filterDailyForecast(response.data.forecast.list));

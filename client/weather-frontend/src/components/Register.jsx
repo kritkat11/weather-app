@@ -16,7 +16,7 @@ function Register({ setLoggedIn }) {
         console.log("Register button clicked");
     
         try {
-            const response = await axios.post('https://weather-app-two-mu-25.vercel.app/', {
+            const response = await axios.post('https://weather-app-yyju.onrender.com/', {
                 name,
                 email,
                 password,

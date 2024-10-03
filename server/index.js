@@ -10,7 +10,7 @@ app.use(express.json());
 // Allow specific origins, including localhost for development
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://weather-app-two-mu-25.vercel.app",
+  "https://weather-app-yyju.onrender.com",
   "https://weather-app-k7rh.vercel.app",
 ];
 

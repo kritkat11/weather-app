@@ -13,7 +13,7 @@ function Login({ setLoggedIn }) {
         e.preventDefault();
 
         try {
-            const response = await axios.post('https://weather-app-two-mu-25.vercel.app/login', { email, password });
+            const response = await axios.post('https://weather-app-yyju.onrender.com/login', { email, password });
             
             if (response.data.message === 'Login successful') {
                 alert('Login successful!');
