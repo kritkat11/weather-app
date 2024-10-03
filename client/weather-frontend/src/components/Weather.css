@@ -1,0 +1,271 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('/src/assets/earth.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* General Container */
+.weather-container {
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.current-weather {
+    width: 40%; /* Ensure same width as others */
+    color: white;
+    padding: 20px;
+    border-radius: 10px; /* Ensure corners are rounded */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    height: 100%; /* Ensure same height */
+    box-sizing: border-box;
+    margin: 10px;
+     /* Ensure padding doesn't alter dimensions */
+}
+
+/* Add margins to the buttons and inputs for spacing */
+.city-input, .search-btn, .favorite-btn {
+    margin: 10px 0; /* Space above and below buttons/inputs */
+}
+
+/* Background image for current weather with shadow effect */
+.current-weather::before {
+    content: '';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('/src/assets/clear-sky.jpg');
+    background-size: cover;
+    background-position: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 1; /* Adjust this for desired shadow effect */
+    z-index: 1; 
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Background images for the weather conditions */
+.current-weather.clear {
+    background-image: url('/src/assets/sunny.jpg');
+}
+
+.current-weather.rain {
+    background-image: url('/src/assets/rain.jpg');
+}
+
+.current-weather.clouds {
+    background-image: url('/src/assets/clear-sky2.jpg');
+}
+
+.current-weather.haze {
+    background-image: url('/src/assets/hazy.jpeg');
+}
+
+.current-weather.mist {
+    background-image: url('/src/assets/hazy.jpeg');
+}
+
+.current-weather.thunderstorm {
+    background-image: url('/src/assets/thunderstorm.webp');
+}
+
+
+
+/* Add more conditions as necessary */
+
+.current-weather > * {
+    position: relative;
+    z-index: 2; /* Ensure the text is above the overlay */
+}
+
+
+/* Forecast Container - 40% left side */
+.forecast-container {
+    width: 40%;
+    padding: 20px;
+    background-color: #222;
+    color: white;
+    border-radius: 10px;
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+
+}
+
+.forecast-container h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffdf00;
+}
+
+.forecast-info {
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+}
+
+.forecast-card {
+    background-color: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.forecast-card h4,
+.forecast-card p {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.current-weather h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: aliceblue;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.current-weather h2 {
+    font-size: 48px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.current-weather p {
+    font-size: 25px;
+    margin: 5px 0;
+    background-color: rgba(142, 139, 139, 0.571); /* Black background with 40% opacity */
+    color: rgb(255, 255, 255); /* Keep the text color white */
+    padding: 5px; /* Add some padding around the text */
+    border-radius: 10px; /* Round the background edges slightly */
+    display: inline-block; /* Ensure the background only wraps around the text */
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8); 
+
+}
+
+.favorite-btn {
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.favorite-btn:hover {
+    background-color: #ff2a00;
+}
+
+/* Search Input & Button */
+.city-input {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 20px;
+    width: 80%;
+    border-radius: 5px;
+    border: none;
+    margin-left: 10px;
+}
+
+.search-btn {
+    margin-top: 10px;
+    background-color: #00aaff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.search-btn:hover {
+    background-color: #0088cc;
+}
+
+/* Favorites List - 20% right side */
+.favorites {
+    width: 20%;
+    background-color: #282828;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-y: auto;
+    height: 100%;
+    box-sizing: border-box;
+    margin: 10px;
+}
+
+.favorites h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    color: #ffdf00;
+}
+
+.favorites ul {
+    list-style: none;
+    padding: 0;
+}
+
+.favorites li {
+    background-color: #333;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .weather-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto; /* Center items in column layout */
+    }
+
+    .current-weather {
+        width: 90%; /* Use most of the width */
+        margin-bottom: 20px;
+        box-sizing: border-box; /* Space below current weather */
+    }
+
+    .forecast-container,
+    .favorites {
+        width: 90%; /* Use most of the width */
+        margin-bottom: 20px;
+        box-sizing: border-box; /* Space below each section */
+    }
+
+    /* Ensure input and buttons are full-width */
+    .city-input{
+        width: 90%; /* Full width for buttons and input */
+        margin: 10px 0px; /* Add margin for spacing */
+        padding: 12px;
+    }
+
+    .search-btn,
+    .favorite-btn {
+        width: 100%; /* Full width for buttons and input */
+        margin: 10px 0px; /* Add margin for spacing */
+        padding: 12px; /* Increase padding for touch targets */
+    }
+}
