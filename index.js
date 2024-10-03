@@ -8,7 +8,7 @@ const app = express();
 app.use(express.json());
 
 app.use(cors({
-    origin: 'https://weather-app-two-mu-25.vercel.app/', // Replace this with your frontend URL
+    origin: 'https://weather-app-k7rh.vercel.app', // Replace this with your frontend URL
     methods: ['GET', 'POST'],
     credentials: true // Add if you need to send cookies
 }));
